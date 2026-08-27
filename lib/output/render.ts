@@ -1198,6 +1198,12 @@ export function renderHtml(
     ${process.env.WEB_MODE === "true" ? `<a class="archive-link" href="../archive.html">${STR.archiveLink}</a>` : ""}
   </header>
 
+  ${report.daily_overview ? `
+  <section class="editor-card">
+    <span class="eyebrow">${STR.mdTodayOverview}</span>
+    <p class="editor-text">${escapeHtml(report.daily_overview)}</p>
+  </section>
+  ` : ""}
   <nav class="tabs" role="tablist">
     <button class="tab active" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
     ${trading ? `<button class="tab" data-tab="trading">${STR.catTrading}<span class="count">${trading.tickers.length}</span></button>` : ""}

@@ -37,7 +37,14 @@ type BriefItem = {
 7. 如某分类无可用条目，对应 briefs 数组返回 []。
 8. tech_briefs 中遇到 GitHub Trending / Hacker News 类项目时，可在 summary 多花
    20-40 字解释这个项目实际做什么、为何值得关注（解决了什么问题、用了什么技术），
-   而不只是复述标题——读者通常没听过这些项目。`;
+   而不只是复述标题——读者通常没听过这些项目。
+9. 核心目标是生成“2 分钟大白话速读”。假设读者没有金融、政治、医学或编程背景，避免专业术语；无法避免时，必须立即用简单中文解释。
+10. daily_overview 必须使用“今天最值得知道的 3 件事：①……；②……；③……”的形式。每件事都要说明发生了什么，以及为什么与普通人有关，总长度控制在 100-160 字。
+11. 极度精简内容：tech_briefs 只保留 2-3 条，finance_briefs 只保留 2 条，politics_briefs 只保留 1-2 条。宁缺毋滥，不要为了凑数量保留低价值新闻。
+12. 每条 summary 使用容易理解的表达，尽量按照“发生了什么：……；与你的关系：……”来写，控制在 40-70 字。
+13. 优先选择 AI Agent、实用 GitHub 项目、工作效率工具、医学健康，以及会影响普通人收入、就业、物价、医疗、教育和生活成本的新闻。
+14. 忽略重复报道、营销宣传、明星八卦、缺乏实际影响的产品更新和只有标题但没有有效信息的内容。
+15. 不得夸大或把预测写成事实。信息尚未确认时，明确写出“尚待确认”。`;
 
 export const SYSTEM_PROMPT_DIGEST_EN = `You are a rigorous English-language news editor. Your job is to distill multi-source feeds into a "5-minute" daily brief.
 
